@@ -6,10 +6,18 @@
     font-style: normal;
 }
 
+:root{
+    --rich-black: #0d1b2aff;
+    --oxford-blue: #1b263bff;
+    --yinmn-blue: #415a77ff;
+    --silver-lake-blue: #778da9ff;
+    --platinum: #e0e1ddff;
+}
 body{
     margin: 2%;
-    background-color: #35322d;
-    background-image: radial-gradient(#f1c662 1.3px, #35322d 1.3px);
+    background-image: radial-gradient(var(--yinmn-blue) 1.3px, var(--oxford-blue) 1.3px);
     background-size: 26px 26px;
 }
+
+
 
