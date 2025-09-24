@@ -1,0 +1,15 @@
+*{
+    user-select: none;
+
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+body{
+    margin: 2%;
+    background-color: #35322d;
+    background-image: radial-gradient(#f1c662 1.3px, #35322d 1.3px);
+    background-size: 26px 26px;
+}
+
