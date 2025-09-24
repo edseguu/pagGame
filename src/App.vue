@@ -2,9 +2,9 @@
     import { ref } from "vue";
     import Footer_contact from "./components/Footer_contact.vue"
     const images = ref([
-        new URL('../assets/topos.png', import.meta.url).href,
-        new URL('../assets/catch.png', import.meta.url).href,
-        new URL('../assets/pinpong.png', import.meta.url).href
+        new URL('./assets/topos.png', import.meta.url).href,
+        new URL('./assets/catch.png', import.meta.url).href,
+        new URL('./assets/pinpong.png', import.meta.url).href
     ]);
     const current = ref(0);
 
