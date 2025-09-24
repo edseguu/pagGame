@@ -1,9 +1,9 @@
 *{
     user-select: none;
-
     font-family: "Inconsolata", monospace;
     font-optical-sizing: auto;
     font-style: normal;
+    overflow-x: hidden;
 }
 
 :root{

@@ -1,5 +1,6 @@
 <script setup>
     import { ref } from "vue";
+    import Footer_contact from "./components/Footer_contact.vue"
     const images = ref([
         "/topos.png",
         "/catch.png",
@@ -11,9 +12,23 @@
         current.value = (current.value + 1) % images.value.length;
     }, 5000);
 
-</script>
+    // Función para manejar la descarga
+    const downloadGame = () => {
+        // Crear un enlace temporal para la descarga
+        const link = document.createElement('a');
+        link.href = '/pryectoRandom.apk';
+        link.download = 'PagGame-Alpha1.apk';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        // Opcional: tracking de descargas
+        console.log('Descarga iniciada:', 'PagGame-Alpha1.apk');
+    };
 
-<template>
+    
+
+</script><template>
     <h1 class="title">GG RANDOM</h1>
     <div class="container_body">
         <div class="carrousel_img">
@@ -25,20 +40,37 @@
                 Mini juegos que cambian al azar cuando pierdes.
             </h1>
 
-            <button class="buttonDownload">DESCARGAR: Alpha1</button>
+            <button @click="downloadGame" class="buttonDownload">DESCARGAR: Alpha1</button>
             
         </div>
         
 
     </div>
+    <footer_contact></footer_contact>
     
 </template>
 
 <style>
-    img{
-        width: 50%;
-        position: relative;
-        transform: translateX(50%);
+    .carrousel_img {
+        flex: 0 0 auto;
+        width: 500px;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+    }
+
+    .carrousel_img img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+        border-radius: 10px;
     }
 
     .title{
@@ -53,8 +85,13 @@
     }
     .container_body{
         justify-content: center;
+        align-items: center;
         display: flex;
-        gap: 1%;
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        flex-wrap: wrap;
     }
 
     h1{
@@ -86,6 +123,10 @@
     text-indent: 15px;
     border: none;
     cursor: pointer;
+    border-radius: 5px;
+    margin: 10% auto;
+    width: fit-content;
+    transition: all 0.3s ease;
     }
 
     .buttonDownload:hover {
@@ -149,5 +190,34 @@
     margin-top: 0;
     opacity: 0.4;
     }
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+        .container_body {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .carrousel_img {
+            width: 250px;
+            height: 250px;
+        }
+        
+        .title {
+            margin-bottom: 5%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .carrousel_img {
+            width: 200px;
+            height: 200px;
+        }
+        
+        .container_body {
+            gap: 1rem;
+            padding: 0 0.5rem;
+        }
     }
 </style>
