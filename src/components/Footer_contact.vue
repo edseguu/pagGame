@@ -9,16 +9,16 @@ export default {
     <div class="footer-content">
       <div class="social-links">
         <a href="https://github.com" target="_blank" class="social-link">
-          <img src="/public/topos.png" alt="GitHub" class="social-icon">
+          <img src="" alt="GitHub" class="social-icon">
         </a>
         <a href="https://linkedin.com" target="_blank" class="social-link">
-          <img src="/public/catch.png" alt="LinkedIn" class="social-icon">
+          <img src="" alt="LinkedIn" class="social-icon">
         </a>
         <a href="https://twitter.com" target="_blank" class="social-link">
-          <img src="/public/pinpong.png" alt="Twitter" class="social-icon">
+          <img src="" alt="Twitter" class="social-icon">
         </a>
         <a href="https://instagram.com" target="_blank" class="social-link">
-          <img src="/public/vite.svg" alt="Instagram" class="social-icon">
+          <img src="" alt="Instagram" class="social-icon">
         </a>
       </div>
       <div class="footer-text">
