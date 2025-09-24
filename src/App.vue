@@ -16,7 +16,7 @@
     const downloadGame = () => {
         // Crear un enlace temporal para la descarga
         const link = document.createElement('a');
-        link.href = '/pryectoRandom.apk';
+        new URL('./assets/pryectoRandom.apk', import.meta.url).href
         link.download = 'PagGame-Alpha1.apk';
         document.body.appendChild(link);
         link.click();
