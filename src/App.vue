@@ -1,5 +1,6 @@
 <script setup>
     import { ref } from "vue";
+    import apkUrl from './assets/pryectoRandom.apk?url';
     import Footer_contact from "./components/Footer_contact.vue"
     const images = ref([
         new URL('./assets/topos.png', import.meta.url).href,
@@ -11,24 +12,12 @@
     setInterval(() => {
         current.value = (current.value + 1) % images.value.length;
     }, 5000);
-
-    // Función para manejar la descarga
-    const downloadGame = () => {
-        // Crear un enlace temporal para la descarga
-        const link = document.createElement('a');
-        new URL('./assets/pryectoRandom.apk', import.meta.url).href
-        link.download = 'PagGame-Alpha1.apk';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        
-        // Opcional: tracking de descargas
-        console.log('Descarga iniciada:', 'PagGame-Alpha1.apk');
-    };
-
     
 
-</script><template>
+</script>
+
+
+<template>
     <h1 class="title">GG RANDOM</h1>
     <div class="container_body">
         <div class="carrousel_img">
@@ -40,7 +29,7 @@
                 Mini juegos que cambian al azar cuando pierdes.
             </h1>
 
-            <button @click="downloadGame" class="buttonDownload">DESCARGAR: Alpha1</button>
+            <a :href="apkUrl" download="PagGame-Alpha1.apk" class="buttonDownload">DESCARGAR: Alpha1</a>
             
         </div>
         
